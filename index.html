@@ -10,15 +10,17 @@
 <body>
     <header> 
         <div class="header-container">
+            <div class="header-title">
+                <h1> Minyeong's Portfolio </h1>
+                <!-- <p> 반갑습니다. 신입 개발자 남민영입니다. </p> -->
+            </div>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#">Main</a></li>
-                    <li><a href="#">About me</a></li>
+                    <li><a href="#">Profile</a></li>
                     <li><a href="#">Projects</a></li>
+                    <li><a href="#">Activities</a></li>
                 </ul>
             </nav>
-            <h1> Hi, I'm Minyeong! </h1>
-            <!-- <p> 반갑습니다. 신입 개발자 남민영입니다. </p> -->
         </div>
 
        
@@ -36,6 +38,7 @@
                     <p> email: skaalsdud7@gmail.com </p>
                     <p> github: <a href="https://github.com/Minyeong0724" target="_blank">https://github.com/Minyeong0724</a> </p>
                     <p> blog: https://blog.naver.com/skaalsdud7 </p>
+                    <p> DGIST (대구경북과학기술원) 학사, 컴퓨터공학 전공 </p>
             
                 </div>
             </div>
@@ -45,15 +48,40 @@
             <h2> Projects </h2>
             <div class="project-grid">
                 <article class="project-card">
-                    <div class="project1-img">
-                        <img src="project1_image1.png">
-                        <img src="project1_image2.png">
+                    <div class="project-img">
+                        <div class="project1-img">
+                            <!-- <img src="project1_image1.png" alt="기존 모델"> -->
+                            <img src="project1_image2.png" alt="우리 모델">
+                        </div>
                     </div>
+
+                    <div class="project-body">
+                        <div class="project-badge">ControlScene</div>
+                        <h3 class="project-title"> 사용자 설명을 통한 단일 이미지에서 동적 3D 장면으로의 조건부 제어 </h3>
+                        <p class="project-meta"> 2023.12~2024.12 | 5인 프로젝트</p>
+                        <hr class="divider">
+                        <p class="short-desc"> 단일 2D 이미지에서 객체(Object)와 배경(Background)을 분리하여 독립적으로 3D로 복원하고, 이를 다시 통합하여 Occlusion(가림 현상) 없는 고품질 3D 장면을 생성하는 AI 파이프라인을 연구했어요. </p>
+                        
+                        <ul class="detail-list"> 
+                            <li> 객체 분리: Segment Anything Model(SAM)을 활용해 사용자가 텍스트로 지정한 객체의 마스크를 생성 </li>
+                            <li> 배경 복원: Stable Diffusion 기반의 인페인팅(Inpainting) 기술로 원본 이미지에서 객체가 제거된 영역을 자연스럽게 복원 </li>
+                            <li> 독립적 3D 재구성: 분리된 객체와 복원된 배경 이미지를 각각 Multi-view Diffusion Model, Gaussian Splatting 기법을 통해 고품질 3D 모델로 생성 </li>
+                            <li> 장면 통합 및 제어: 생성된 3D 배경과 3D 객체를 다시 합성하고, 사용자가 객체의 위치, 크기, 회전 등을 동적으로 제어할 수 있는 인터랙티브 3D 환경을 구축 </li>
+                        </ul>
+                        <div class="tech-stack-container">
+                            <p> Python, Pytorch, SAM, stable diffusion model, MVDream, ImageDream .. </p>
+                        </div>
+                        <div class="more-link">
+                            <a href="#" taget="_self">More </a>
+                        </div>
+                    </div>
+<!-- 
                     <div class="project-content">
                         <h3> 사용자 설명을 통한 단일 이미지에서 동적 3D 장면으로의 조건부 제어 </h3>
                         <p> 2D 단일 이미지를 입력으로 받아 3D model으로 재구성합니다. 물체를 분리하면서 생기는 이미지의 빈 현상(occlusion)을 최소화하였습니다. 사용자가 3D 배경 및 물체를 자유롭게 조작할 수 있습니다. </p>
-                    </div>
+                    </div> -->
                 </article>
+
                 <article class="project-card">
                     <div class="project2-img">
                         <img src="project2_image1.png">
