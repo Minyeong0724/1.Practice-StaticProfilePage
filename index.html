@@ -6,19 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header> 
         <div class="header-container">
             <div class="header-title">
                 <h1> Minyeong's Portfolio </h1>
-                <!-- <p> 반갑습니다. 신입 개발자 남민영입니다. </p> -->
+
             </div>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#">Profile</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Activities</a></li>
+                    <!-- TODO: Eng ver. page 구현하기  -->
+                    <div class="lang-switch"> 
+                        <button type="button" class="lang-btn-kor">KOR</button>
+                        <span class="lang-divider">|</span>
+                        <button type="button" class="lang-btn-eng">ENG</button>
+                    </div>
                 </ul>
             </nav>
         </div>
@@ -27,30 +34,51 @@
     </header>
 
     <main> 
-        <section class="profile">
-            <!-- 하이퍼링크?  -->
-            <h2> Profile </h2>
+        <div class="profile-intro">
+            <h1 class="main-slogan">
+                사용자의 입장에서 문제를 읽고,<br>
+                기술로 다정한 <span>맞춤형 솔루션</span>을 제공하는 개발자 남민영입니다.
+            </h1>
 
-            <div class="profile-container">
-                <img src="https://cdn.inflearn.com/public/users/thumbnails/278414/d70f8e17-d070-4af2-a980-640f52cf9d62">
-                
-                <div class="profile-info">
-                    <p> email: skaalsdud7@gmail.com </p>
-                    <p> github: <a href="https://github.com/Minyeong0724" target="_blank">https://github.com/Minyeong0724</a> </p>
-                    <p> blog: https://blog.naver.com/skaalsdud7 </p>
-                    <p> DGIST (대구경북과학기술원) 학사, 컴퓨터공학 전공 </p>
-            
-                </div>
+            <div class="detailed-message">
+                <p>
+                    기계공학부터 컴퓨터 비전까지, 다양한 분야를 넘나들며 제가 배운 가장 값진 경험은 
+                    <strong>사용자의 언어로 세상을 바라보는 법</strong>이었습니다.
+                </p>
+                <p>
+                    기술은 그 자체로 존재할 때보다 누군가의 삶에 녹아들어 불편함을 걷어낼 때 가장 빛난다고 믿습니다. 
+                    기숙사생의 공용 냉장고 항목을 관리해주는 시스템부터, 이미지를 3D 모델로 재구성해 
+                    사용자의 잠들어있던 경험을 일깨우는 연구까지. 저는 소외되는 이 없이 
+                    <strong>누구나 기술의 혜택을 온전히 누릴 수 있는 환경</strong>을 꿈꿉니다.
+                </p>
+                <p>
+                    사용자의 숨은 필요를 읽어내어 오직 그들만을 위해 설계된 최선의 솔루션을 제공하는 일, 
+                    저는 기술을 통해 우리 일상의 다정한 변화를 만들어가고 싶습니다.
+                </p>
             </div>
+        </div>
+
+        <section class="profile">
+
+            <div class="profile-link">
+                <a href="https://github.com/Minyeong0724" target="_blank">
+                    <img src="images/github-icon.png">
+                </a>
+                <a href="https://blog.naver.com/skaalsdud7" target="_blank">
+                    <img src="images/velog-icon.png">
+                </a>
+                <img src="images/gmail-icon.png">
+                
+            </div>
+            <hr class="divider">
         </section>
 
         <section class="project">
-            <h2> Projects </h2>
+            <h1> Projects </h1>
             <article class="project-card">
                 <div class="project-img">
                     <div class="project1-img">
-                        <!-- <img src="project1_image1.png" alt="기존 모델"> -->
-                        <img src="project1_image2.png" alt="우리 모델">
+                        <img src="images/project1-image.png">
                     </div>
                 </div>
 
@@ -59,13 +87,13 @@
                     <h3 class="project-title"> 사용자 설명을 통한 단일 이미지에서 동적 3D 장면으로의 조건부 제어 </h3>
                     <p class="project-meta"> 2023.12~2024.12 | 5인 프로젝트</p>
                     <hr class="divider">
-                    <p class="short-desc"> 단일 2D 이미지에서 객체(Object)와 배경(Background)을 분리하여 독립적으로 3D로 복원하고, 이를 다시 통합하여 Occlusion(가림 현상) 없는 고품질 3D 장면을 생성하는 AI 파이프라인을 연구했어요. </p>
+                    <p class="short-desc"> 단일 2D 이미지에서 객체(Object)와 배경(Background)을 분리하여 독립적으로 3D로 복원하고, 이를 다시 통합하여 Occlusion(가림 현상) 없는 고품질 3D 장면을 생성하는 AI 파이프라인을 연구했습니다. </p>
                     
                     <ul class="detail-list"> 
-                        <li> 객체 분리: Segment Anything Model(SAM)을 활용해 사용자가 텍스트로 지정한 객체의 마스크를 생성 </li>
-                        <li> 배경 복원: Stable Diffusion 기반의 인페인팅(Inpainting) 기술로 원본 이미지에서 객체가 제거된 영역을 자연스럽게 복원 </li>
-                        <li> 독립적 3D 재구성: 분리된 객체와 복원된 배경 이미지를 각각 Multi-view Diffusion Model, Gaussian Splatting 기법을 통해 고품질 3D 모델로 생성 </li>
-                        <li> 장면 통합 및 제어: 생성된 3D 배경과 3D 객체를 다시 합성하고, 사용자가 객체의 위치, 크기, 회전 등을 동적으로 제어할 수 있는 인터랙티브 3D 환경을 구축 </li>
+                        <li> <strong> 객체 분리:</strong>Segment Anything Model(SAM)을 활용해 사용자가 텍스트로 지정한 객체의 마스크를 생성 </li>
+                        <li> <strong>배경 복원:</strong> Stable Diffusion 기반의 인페인팅(Inpainting) 기술로 원본 이미지에서 객체가 제거된 영역을 자연스럽게 복원 </li>
+                        <li> <strong>독립적 3D 재구성: </strong> 분리된 객체와 복원된 배경 이미지를 각각 Multi-view Diffusion Model, Gaussian Splatting 기법을 통해 고품질 3D 모델로 생성 </li>
+                        <li> <strong>장면 통합 및 제어: </strong> 생성된 3D 배경과 3D 객체를 다시 합성하고, 사용자가 객체의 위치, 크기, 회전 등을 동적으로 제어할 수 있는 인터랙티브 3D 환경을 구축 </li>
                     </ul>
                     <div class="tech-stack-container">
                         <p> Python, Pytorch, SAM, stable diffusion model, MVDream, ImageDream .. </p>
@@ -77,24 +105,75 @@
             </article>
 
             <article class="project-card">
-                <div class="project2-img">
-                    <img src="project2_image1.png">
-                    <img src="project2_image2.png">
-                    <img src="project2_image3.png">
+                <div class="project-img">
+                    <div class="project2-img">
+                        <img src="images/project2-gif.gif" alt="">
+                    </div>
                 </div>
-                <div class="project-content">
-                    <h3>QR코드 기반 자율주행 라즈봇의 실시간 전략 시스템 </h3>
-                    <p> C/C++와 멀티스레딩을 기반으로, 실시간 통신과 QR코드 위치 인식을 통해 1:1 토너먼트를 수행하는 자율주행 로봇 시스템입니다. </p>
+
+                <div class="project-body">
+                    <div class="project-badge">자율주행 로봇</div>
+                    <h3 class="project-title"> QR코드 기반 자율주행 라즈봇의 실시간 전략 시스템</h3>
+                    <p class="project-meta"> 2024.05~2024.06 | 4인 프로젝트</p>
+                    <hr class="divider">
+                    <p class="short-desc"> C/C++와 멀티스레딩을 기반으로, 실시간 통신과 QR코드 위치 인식을 통해 1:1 토너먼트를 수행하는 자율주행 로봇 시스템입니다.  </p>
+                    
+                    <ul class="detail-list"> 
+                        <li><strong>멀티스레드 기반 실시간 통신:</strong> Pthreads와 Mutex를 활용하여 데이터 무결성을 보장하는 서버-클라이언트(TCP/IP) 통신 모듈 설계</li>
+                        <li><strong>OpenCV 활용 실시간 위치 인식:</strong> 카메라 프레임 내 QR코드를 탐지·디코딩하여 로봇의 현재 좌표를 Thread-safe하게 갱신하는 로직 구현</li>
+                        <li><strong>Greedy 기반 경로 탐색 알고리즘:</strong> 1초마다 실시간 맵 정보를 분석하여 최적 보상 노드로 이동하고, 트랩 탈출 등 예외 상황을 처리하는 알고리즘 구축</li>
+                        <li><strong>하드웨어 환경 최적화:</strong> 조도 및 마찰력 변수에 대응하기 위해 센서 임계값을 경험적으로 튜닝하여 주행 안정성 확보</li>
+                    </ul>
+                    <div class="tech-stack-container">
+                        <p> C, C++, OpenCV, Pthreads (Mutex), TCP/IP Sockets, Raspberry Pi .. </p>
+                    </div>
+                    <div class="more-link">
+                        <a href="#" taget="_self">More </a>
+                    </div>
                 </div>
             </article>
+
+            <article class="project-card">
+                <div class="project-img">
+                    <p> 이미지 준비중(코드 리팩토링 필요)</p>
+                    <div class="project3-img">
+                        <!-- <img src="project3_image.png"> -->
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <div class="project-badge">금융 시스템 시뮬레이션</div>
+                    <h3 class="project-title"> C++ 객체지향 설계를 통한 ATM 금융 시스템 시뮬레이터 </h3>
+                    <p class="project-meta"> 2023.11 - 2023.12 | 3인 팀 프로젝트 </p>
+                    <hr class="divider">
+                    <p class="short-desc"> C++와 객체지향(OOP) 개념을 활용하여, 계좌 이체, 입/출금, 관리자 메뉴 등 실제 은행 시스템의 핵심 프로세스를 모방한 시뮬레이터입니다. </p>
+                    
+                    <ul class="detail-list"> 
+                        <li><strong>객체지향 원칙(OOP) 기반 시스템 설계:</strong> 상속과 다형성을 활용한 다국어 지원 및 캡슐화를 통한 데이터 무결성 보장</li>
+                        <li><strong>STL 기반 복잡한 데이터 모델링:</strong> map과 vector를 활용하여 Bank-User-Account 간의 관계를 정의하고 효율적인 조회 구조 구축</li>
+                        <li><strong>중앙 집중형 데이터 관리:</strong> 모든 객체의 포인터를 통합 관리하는 Info 클래스를 설계하여 동적 객체 참조 문제 해결</li>
+                        <li><strong>금융 트랜잭션 예외 처리:</strong> 잔액 및 ATM 현금 부족, 1회 한도 초과 등 다양한 비즈니스 예외 상황 로직 구현</li>
+                    </ul>
+                    
+                    <div class="tech-stack-container">
+                        <p> C++ </p>
+                    </div>
+                    
+                    <div class="more-link">
+                        <a href="#" target="_blank">More </a>
+                    </div>
+                </div>
+            </article>
+
+            
         </section>
 
-        <h2> Activities </h2>
-        <h2> Skills and Tools </h2>
-        <h2> Certifications </h2>
+        <h1> Activities </h1>
+        <p> 연구실 인턴 활동, UCB 여름학기 활동 경험을 작성할 예정입니다. </p>
+        <h1> Certifications </h1>
+        <p> 자격증, 어학성적 등을 기재할 예정입니다. </p>
     </main>
 </body>
 </html>
 
-project, Activities, Skills and Tools, Certifications
  
